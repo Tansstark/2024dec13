@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title> temp Converter</title>
+        <style>
+            *{
+                font-size: 50px;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+            body{
+               background-color: lavender;
+
+            }
+            input{
+                width:60%;padding:10px;
+                border-radius: 15px;border-color: black;
+            }
+            div{
+                background-color: rgb(107, 154, 220); width: 50%;padding: 40px;
+                border-radius: 40px;
+                border-color: azure;
+            
+            }
+            h1{
+                background-color:  rgb(107, 154, 220); width: 50%;padding: 40px;  border-radius: 40px;
+            }
+            </style>
+    </head>
+    <body>
+        <center>
+            <h1>Temperature Converter</h1>
+            <div>
+            <form onsubmit="convert()">
+               <label for="">Cel</label> <input type="number" id="Cel" placeholder="Temp in Cel" step="0.01" ><br><br>
+               <label for="">Fara</label> <input type="number" id="fara" placeholder="Temp in fara"step="0.01"><br><br>
+            </form>
+        </div>
+        </center>
+        <script> 
+           
+                
+                let cel =document.getElementById("Cel");
+                let fara =document.getElementById("fara");
+
+                cel.addEventListener("input",function(){
+                    let c = parseFloat(cel.value);
+                    let f= (c*9/5)+32;
+                    fara.value=f.toFixed(2);
+                })
+                fara.addEventListener("input",function(){
+                    let f = parseFloat(fara.value);
+                    let c=((f-32)*5)/9;
+                    cel.value=c.toFixed(2);
+                })
+
+        </script>
+    </body>
+</html>
